@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tombstone Unveiling - Goitsione Khumo Hamis</title>
+<style>
+:root {
+--gold: #D4AF37;
+--soft-white: #f4f4f4;
+--dark-bg: #0a0a0a;
+}
+
+body {
+margin: 0;
+padding: 0;
+font-family: 'Georgia', serif;
+background: radial-gradient(circle at top, #1a1a1a 0%, #000000 100%);
+color: var(--gold);
+text-align: center;
+line-height: 1.6;
+}
+
+.container {
+padding: 40px 20px;
+max-width: 500px;
+margin: auto;
+}
+
+/* --- HEADER --- */
+.title-top {
+text-transform: uppercase;
+letter-spacing: 3px;
+font-size: 14px;
+color: #888;
+margin-bottom: 10px;
+}
+
+.memory {
+font-size: 32px;
+font-style: italic;
+color: white;
+margin-bottom: 5px;
+font-weight: 300;
+}
+
+.name {
+font-size: 24px;
+font-weight: bold;
+letter-spacing: 1px;
+margin: 15px 0;
+color: var(--gold);
+}
+
+.divider {
+width: 60%;
+height: 1px;
+background: linear-gradient(90deg, transparent, var(--gold), transparent);
+margin: 20px auto;
+}
+
+.event-date {
+font-size: 20px;
+color: white;
+margin-bottom: 10px;
+}
+
+.lifespan {
+font-size: 15px;
+color: #aaa;
+margin-bottom: 30px;
+}
+
+/* --- CARD STYLE --- */
+.card {
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(212, 175, 55, 0.3);
+border-radius: 15px;
+padding: 25px;
+backdrop-filter: blur(5px);
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+margin-bottom: 20px;
+}
+
+.info-row {
+margin-bottom: 25px;
+font-size: 18px;
+}
+
+.info-row strong {
+color: white;
+display: block;
+font-size: 14px;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 5px;
+}
+
+/* --- PROGRAM LIST --- */
+.program-list {
+text-align: left;
+display: inline-block;
+margin: 10px auto;
+color: white;
+font-size: 16px;
+list-style: none;
+padding: 0;
+}
+
+.program-list li {
+margin-bottom: 12px;
+padding-left: 20px;
+position: relative;
+}
+
+.program-list li::before {
+content: "•";
+color: var(--gold);
+position: absolute;
+left: 0;
+font-weight: bold;
+}
+
+.highlight-item {
+color: var(--gold);
+font-weight: bold;
+font-style: italic;
+margin-top: 15px;
+border-top: 1px solid rgba(212, 175, 55, 0.2);
+padding-top: 10px;
+}
+
+/* --- BUTTONS --- */
+.btn {
+display: block;
+width: 100%;
+padding: 15px;
+margin: 10px 0;
+font-size: 16px;
+font-family: 'Georgia', serif;
+background: transparent;
+color: white;
+border: 1px solid var(--gold);
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.btn:hover {
+background: var(--gold);
+color: black;
+}
+
+.map-link {
+display: inline-block;
+background: var(--gold);
+color: black;
+padding: 12px 25px;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+margin-top: 10px;
+font-size: 14px;
+}
+
+/* --- HIDDEN SECTIONS --- */
+.details-box {
+display: none;
+padding: 15px;
+margin-top: 10px;
+animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(-10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+margin-top: 40px;
+font-size: 12px;
+color: #666;
+letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="title-top">Tombstone Unveiling</div>
+<div class="memory">In Loving Memory Of</div>
+<div class="name">GOITSIONE KHUMO HAMIS</div>
+
+<div class="divider"></div>
+
+<div class="event-date">March 28, 2026</div>
+<div class="card">
+
+<div class="info-row">
+<strong>Time</strong>
+08:00 AM
+</div>
+
+<div class="lifespan">
+Sunrise: 28/12/17 | Sunset: 28/12/17
+</div>
+
+<div class="card">
+<button class="btn" onclick="toggle('program')">View Program</button>
+<div id="program" class="details-box">
+<ul class="program-list">
+<li class="highlight-item">Welcoming of guests</li>
+<li class="highlight-item">Opening prayer and Hymn</li>
+<li class="highlight-item">Sermon</li>
+<li class="highlight-item">Procession to Cemetery</li>
+<li class="highlight-item">Lunch is served</li>
+<li class="highlight-item">Vote of thanks</li>
+<li style="font-size: 1.2em; color: var(--gold);">Let's dance!</li>
+<li class="highlight-item">THANK YOU</li>
+</ul>
+</div>
+</div>
+
+<button class="btn" onclick="toggle('home')">Get Home Directions</button>
+<div id="home" class="details-box">
+<a href="https://maps.app.goo.gl/S4ryVC7T7WhzvoBA9" class="map-link" target="_blank">OPEN GOOGLE MAPS</a>
+</div>
+
+<div class="info-row">
+<strong>Cemetery</strong>
+Paradise / Jackalas
+</div>
+
+</div>
+
+<footer>
+Tombstone Unveiling
+</footer>
+</div>
+
+<script>
+function toggle(id) {
+const element = document.getElementById(id);
+const isVisible = element.style.display === "block";
+element.style.display = isVisible ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
